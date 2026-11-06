@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>부동산랩</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+<div class="top"><div class="topin">
+  <div class="brand"><i aria-hidden="true"></i>부동산랩</div>
+  <nav aria-label="메뉴">
+    <a href="#home" data-v="home">홈</a>
+    <a href="#calc" data-v="calc">손익계산기</a>
+    <a href="#plan" data-v="plan">자금계획</a>
+    <a href="#rent" data-v="rent">전세·월세·매수</a>
+    <a href="#map" data-v="map">시세 지도</a>
+    <a href="#notes" data-v="notes">임장 노트</a>
+    <a href="#news" data-v="news">정책 브리핑</a>
+    <a href="#terms" data-v="terms">용어사전</a>
+  </nav>
+</div></div>
+
+<div class="wrap">
+
+<section id="v-home" data-view hidden>
+
+<div class="hero">
+  <svg class="sky" id="skyline" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
+  <div>
+    <h1>서울 내 집 마련 계산 노트</h1>
+    <p class="big">부동산<b>랩</b></p>
+    <p class="sub">집값이 아니라 세금·이자·수수료까지 다 뺀 숫자로 판단해요. 계산하고, 지도에서 고르고, 매주 정책을 확인하세요.</p>
+    <a class="cta" href="#calc">손익 계산 시작하기 <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="hcard" id="herocard">
+    <div class="l">서울 아파트 주간 변동률</div>
+    <div class="v" id="herov">—</div>
+    <div class="l" id="heros"></div>
+    <div class="dots" id="herodots"></div>
+  </div>
+</div>
+<p class="msg" id="homeasof" style="margin:0 0 8px"></p>
+<div class="nums" id="nums"><div class="num"><div class="l">지표를 불러오는 중이에요</div><div class="v">—</div></div></div>
+<div class="homegrid">
+  <div class="panel">
+    <h2>매수 타이밍 신호등</h2>
+    <div id="signals"><p class="msg">신호를 불러오는 중이에요.</p></div>
+  </div>
+  <div style="display:grid;gap:14px;min-width:0">
+    <div class="panel">
+      <h2>이번 주 시세 지도</h2>
+      <div class="minimapw">
+        <a href="#map" aria-label="시세 지도 크게 보기"><svg id="minimap" viewBox="60 120 760 520" role="img" aria-label="서울 구별 아파트 매매가격 변동률 지도"></svg></a>
+        <div id="movers"><p class="msg">불러오는 중이에요.</p></div>
+      </div>
+      <p class="msg" id="minilabel" style="margin:8px 0 0"></p>
+    </div>
+
+    <div class="panel">
+      <h2>이번 주 한 줄</h2>
+      <p id="homehead" style="margin:0;font-size:13.5px;line-height:1.65">브리핑을 불러오는 중이에요.</p>
+      <a href="#news" style="font-size:12.5px;color:var(--accent);text-decoration:none;display:inline-block;margin-top:6px">브리핑 전체 보기 →</a>
+    </div>
+    <div class="panel">
+      <h2>최근 시나리오</h2>
+      <div class="mini" id="homesc"><p class="msg">계산기에서 저장한 시나리오가 여기 보여요.</p></div>
+    </div>
+    <div class="panel">
+      <h2>최근 임장 노트</h2>
+      <div class="mini" id="homent"><p class="msg">임장 노트를 쓰면 여기 보여요.</p></div>
+    </div>
+  </div>
+</div>
+<p class="note">신호등은 사는 사람 입장이에요. 금리·보유세가 내려가고, 대출 규제가 풀리고, 사는 쪽이 협상하기 좋을수록 초록이에요. 투자 권유가 아니라 판단을 돕는 참고 자료예요. 숫자와 신호는 매주 월요일 브리핑과 함께 갱신돼요.</p>
+</section>
+
+<section id="v-calc" data-view hidden>
+<header>
+  <h1>손익계산기</h1>
+  <p>숫자를 바꾸면 세금·이자·수수료가 자동으로 다시 계산돼요. 단위는 만원이에요.</p>
+</header>
+<div class="grid">
+<form class="panel" id="f" autocomplete="off">
+  <fieldset>
+    <legend>집</legend>
+    <div class="f"><label for="buy">매수가</label><div class="in"><input id="buy" type="number" value="200000" step="1000"><span>만</span></div></div>
+    <div class="conv" id="buyc"></div>
+    <div class="f"><label for="sell">예상 매도가</label><div class="in"><input id="sell" type="number" value="270000" step="1000"><span>만</span></div></div>
+    <div class="conv" id="sellc"></div>
+    <div class="f"><label for="years">보유 기간</label><div class="in"><input id="years" type="number" value="6" min="1" max="30" step="1"><span>년</span></div></div>
+    <label class="chk"><input id="big" type="checkbox"> 전용 85㎡ 초과 (약 25.7평 초과)</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>대출</legend>
+    <div class="f"><label for="region">지역</label><select id="region"><option value="reg">서울·규제지역</option><option value="non">비규제지역</option></select></div>
+    <div class="f"><label for="btype">구매자</label><select id="btype"><option value="gen">무주택 일반</option><option value="first">생애최초</option></select></div>
+    <div class="hint" id="ltvhint"></div>
+    <div class="f"><label for="loan">대출금</label><div class="in"><input id="loan" type="number" value="40000" step="1000"><span>만</span></div></div>
+    <div class="f"><label for="rate">금리</label><div class="in"><input id="rate" type="number" value="4.3" step="0.1"><span>%</span></div></div>
+    <div class="f"><label for="term">만기</label><div class="in"><input id="term" type="number" value="30" step="1"><span>년</span></div></div>
+    <div class="f"><label for="rtype">상환 방식</label><select id="rtype"><option value="amort">원리금균등</option><option value="bullet">이자만 (만기일시)</option></select></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>나의 조건</legend>
+    <div class="f"><label for="houses">매수 후 보유 주택 수</label><select id="houses"><option value="1">1주택</option><option value="2">2주택</option><option value="3">3주택 이상</option></select></div>
+    <div class="f"><label for="live">실거주 기간<small>양도세 비과세·공제에 영향</small></label><div class="in"><input id="live" type="number" value="6" min="0" step="1"><span>년</span></div></div>
+    <div class="f"><label for="rent">월세로 살면 낼 돈<small>실거주 가치, 0이면 제외</small></label><div class="in"><input id="rent" type="number" value="400" step="10"><span>만/월</span></div></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>기타 비용</legend>
+    <div class="f"><label for="interior">인테리어</label><div class="in"><input id="interior" type="number" value="3000" step="100"><span>만</span></div></div>
+    <label class="chk"><input id="intexp" type="checkbox" checked> 인테리어를 양도세 필요경비로 인정</label>
+    <div class="f"><label for="move">이사비</label><div class="in"><input id="move" type="number" value="300" step="10"><span>만</span></div></div>
+    <div class="f"><label for="maint">수선·유지비</label><div class="in"><input id="maint" type="number" value="200" step="10"><span>만/년</span></div></div>
+    <label class="chk"><input id="vat" type="checkbox"> 중개보수에 부가세 10% 포함</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>비교 기준과 가정</legend>
+    <div class="f"><label for="dep">예금 금리</label><div class="in"><input id="dep" type="number" value="2.8" step="0.1"><span>%</span></div></div>
+    <div class="f"><label for="bond">채권 금리<small>미국채 등, 환율 변동 제외</small></label><div class="in"><input id="bond" type="number" value="4.3" step="0.1"><span>%</span></div></div>
+    <div class="f"><label for="itax">이자소득세</label><div class="in"><input id="itax" type="number" value="15.4" step="0.1"><span>%</span></div></div>
+    <div class="f"><label for="real">공시가 현실화율</label><div class="in"><input id="real" type="number" value="69" step="1"><span>%</span></div></div>
+    <div class="f"><label for="bdisc">주택채권 즉시매도 할인율</label><div class="in"><input id="bdisc" type="number" value="7" step="0.5"><span>%</span></div></div>
+  </fieldset>
+</form>
+
+<main style="min-width:0">
+  <div class="tiles">
+    <div class="tile main"><div class="l">최종 순이익 (세후)</div><div class="v" id="t1"></div><div class="s" id="t1s"></div></div>
+    <div class="tile"><div class="l">연 수익률 (IRR)</div><div class="v" id="t2"></div><div class="s" id="t2s"></div></div>
+    <div class="tile"><div class="l">부대비용 합계</div><div class="v neg" id="t3"></div><div class="s" id="t3s"></div></div>
+    <div class="tile"><div class="l">처음 필요한 내 돈</div><div class="v" id="t4"></div><div class="s">계약~잔금 때 현금</div></div>
+  </div>
+
+  <div class="panel">
+    <h2>차익에서 무엇이 빠지나</h2>
+    <div class="wf" id="wf"></div>
+  </div>
+
+  <details id="d-buy"><summary><span class="chev"></span><span class="t">살 때</span><span class="c">세금·수수료·입주</span><span class="a neg" id="s-buy"></span></summary><div class="items" id="i-buy"></div></details>
+  <details id="d-hold"><summary><span class="chev"></span><span class="t">보유 중</span><span class="c" id="c-hold"></span><span class="a neg" id="s-hold"></span></summary><div class="items" id="i-hold"></div></details>
+  <details id="d-sell"><summary><span class="chev"></span><span class="t">팔 때</span><span class="c">수수료·양도세</span><span class="a neg" id="s-sell"></span></summary><div class="items" id="i-sell"></div></details>
+  <details id="d-plus" open><summary><span class="chev"></span><span class="t">비교해 보면</span><span class="c">실거주 가치·예금·채권</span></summary><div class="items" id="i-plus"></div></details>
+
+  <p class="note"><b>계산 기준</b> 2026년 11월 현행 세법 기준의 근사치예요. 다주택 종부세는 이 집만 따로 계산하고, 대출 한도는 DSR(소득 기준)을 반영하지 않아요. 집값은 매수가에서 매도가까지 매년 같은 폭으로 오른다고 가정해요. 2026년 세제개편안(장기보유특별공제를 거주 중심으로 개편, 2028년부터 단계 적용 예정)은 아직 국회 통과 전이라 넣지 않았어요. 실제 판단 전에는 세무사와 은행 확인을 거치세요.</p>
+</main>
+</div>
+
+<div class="panel" style="margin-top:20px">
+  <h2>저장한 시나리오</h2>
+  <p class="msg" style="margin:0 0 8px">지금 입력한 조건을 이름 붙여 저장하고, 여러 개를 나란히 비교해요.</p>
+  <div class="saverow">
+    <input type="text" id="scname" placeholder="예: 옥수 30평 6년 보유" maxlength="40">
+    <button class="btn" id="scsave" type="button">지금 조건 저장</button>
+    <span class="msg" id="scmsg"></span>
+  </div>
+  <div class="tbl" id="sctbl"><p class="msg" style="margin:10px 0 0">아직 저장한 시나리오가 없어요.</p></div>
+</div>
+</section>
+
+<section id="v-rent" data-view hidden>
+<header>
+  <h1>전세·월세·매수 비교</h1>
+  <p>같은 집에 같은 기간 산다면 어떤 방식이 돈이 덜 드는지 비교해요. 내 돈을 예금에 넣었을 때 받았을 이자(기회비용)까지 비용으로 쳐요.</p>
+</header>
+<div class="grid">
+<form class="panel" id="rf" autocomplete="off">
+  <fieldset><legend>이 집의 가격</legend>
+    <div class="f"><label for="r_price">매매가</label><div class="in"><input id="r_price" type="number" value="120000" step="1000"><span>만</span></div></div><div class="conv" id="r_pricec"></div>
+    <div class="f"><label for="r_jeonse">전세 보증금</label><div class="in"><input id="r_jeonse" type="number" value="65000" step="1000"><span>만</span></div></div><div class="conv" id="r_jeonsec"></div>
+    <div class="f"><label for="r_wdep">월세 보증금</label><div class="in"><input id="r_wdep" type="number" value="10000" step="500"><span>만</span></div></div>
+    <div class="f"><label for="r_wrent">월세</label><div class="in"><input id="r_wrent" type="number" value="250" step="10"><span>만/월</span></div></div>
+  </fieldset>
+  <fieldset><legend>대출</legend>
+    <div class="f"><label for="r_loan">매수 시 주담대<small>서울 LTV 40% 기준</small></label><div class="in"><input id="r_loan" type="number" value="48000" step="1000"><span>만</span></div></div>
+    <div class="f"><label for="r_mrate">주담대 금리</label><div class="in"><input id="r_mrate" type="number" value="4.3" step="0.1"><span>%</span></div></div>
+    <div class="f"><label for="r_jloan">전세대출</label><div class="in"><input id="r_jloan" type="number" value="20000" step="1000"><span>만</span></div></div>
+    <div class="f"><label for="r_jrate">전세대출 금리</label><div class="in"><input id="r_jrate" type="number" value="4.0" step="0.1"><span>%</span></div></div>
+  </fieldset>
+  <fieldset><legend>가정</legend>
+    <div class="f"><label for="r_years">살 기간</label><div class="in"><input id="r_years" type="number" value="5" step="1"><span>년</span></div></div>
+    <div class="f"><label for="r_grow">집값 상승률</label><div class="in"><input id="r_grow" type="number" value="2" step="0.5"><span>%/년</span></div></div>
+    <div class="f"><label for="r_dep">내 돈 예금 수익률<small>세후</small></label><div class="in"><input id="r_dep" type="number" value="2.4" step="0.1"><span>%</span></div></div>
+  </fieldset>
+</form>
+<main style="min-width:0">
+  <div class="tiles" id="rtiles"></div>
+  <div class="panel"><h2>기간 전체 주거비</h2><div class="wf" id="rbars"></div></div>
+  <div id="rdetail"></div>
+  <p class="note">매수는 1주택 실거주 기준이에요. 집값 상승분은 비용에서 빼요. 전세·월세는 2년마다 재계약한다고 보고 중개보수와 이사비를 넣었고, 보증금 인상이나 집주인 사정으로 이사하는 경우는 넣지 않았어요. 수선·유지비는 연 200만 원으로 잡았어요.</p>
+</main>
+</div>
+</section>
+<section id="v-map" data-view hidden>
+<header>
+  <h1>서울 시세 지도</h1>
+  <p>구별 아파트 매매가격 주간 변동률이에요. 빨강은 오른 곳, 파랑은 내린 곳이에요. 구를 누르면 그 구의 단지가 나오고, 끌어서 옮기거나 +/−로 확대할 수 있어요.</p>
+</header>
+<div class="mapgrid">
+  <div class="mapbox">
+    <div class="mapwrap"><div class="mapscroll"><svg id="map" viewBox="0 0 900 726" role="img" aria-label="서울 구별 아파트 매매가격 변동률 지도"></svg></div><div class="zoom"><button type="button" id="zin" aria-label="확대">+</button><button type="button" id="zout" aria-label="축소">−</button><button type="button" id="zreset" aria-label="처음 크기로" style="font-size:12px">↺</button></div></div>
+    <div class="legend" id="legend"></div>
+  </div>
+  <aside class="side">
+    <div class="card" id="aptcard">
+      <h3>구나 단지를 골라 보세요</h3>
+      <p style="margin:0;font-size:13px;color:var(--muted)">지도에서 구를 누르면 변동률과 그 구의 단지가, 점을 누르면 단지 정보가 나와요. 초록 점은 세 업무지구 사이 벨트 안 단지예요.</p>
+    </div>
+    <div class="card">
+      <h3>단지 목록</h3>
+      <div class="alist" id="alist"><p style="font-size:13px;color:var(--muted);margin:6px 0">단지 정보를 불러오는 중이에요.</p></div>
+    </div>
+  </aside>
+</div>
+<div class="panel" style="margin-top:16px">
+  <h2>단지 비교</h2>
+  <p class="msg" id="cmpmsg" style="margin:0 0 8px"></p>
+  <div id="cmpbody"></div>
+</div>
+<p class="note">구 경계는 통계청 행정구역 자료, 변동률은 한국부동산원 주간 아파트 가격 동향이에요. 매주 월요일 브리핑과 함께 갱신되고, 아직 수집되지 않은 구는 회색으로 보여요. 지하철은 주요 역만 이었고, 원은 각 업무지구에서 반경 약 3km예요. 단지 실거래가는 국토교통부 API가 연결되면 채워져요.</p>
+</section>
+
+
+<section id="v-plan" data-view hidden>
+<header>
+  <h1>내 자금계획</h1>
+  <p>소득과 모은 돈을 넣으면 지금 받을 수 있는 대출, 살 수 있는 집값, 목표 집까지 남은 기간을 계산해요.</p>
+</header>
+<div class="grid">
+<form class="panel" id="pf" autocomplete="off">
+  <fieldset>
+    <legend>소득과 저축</legend>
+    <div class="f"><label for="p_inc">연소득<small>부부라면 합산</small></label><div class="in"><input id="p_inc" type="number" value="12000" step="100"><span>만/년</span></div></div>
+    <div class="f"><label for="p_debt">다른 대출 상환액<small>신용대출 등 연 원리금</small></label><div class="in"><input id="p_debt" type="number" value="0" step="100"><span>만/년</span></div></div>
+    <div class="f"><label for="p_cash">지금 모은 돈</label><div class="in"><input id="p_cash" type="number" value="30000" step="1000"><span>만</span></div></div>
+    <div class="f"><label for="p_save">매달 저축액</label><div class="in"><input id="p_save" type="number" value="300" step="10"><span>만/월</span></div></div>
+    <div class="f"><label for="p_ret">저축 수익률<small>세후, 연</small></label><div class="in"><input id="p_ret" type="number" value="3" step="0.1"><span>%</span></div></div>
+  </fieldset>
+  <fieldset>
+    <legend>목표 집</legend>
+    <div class="f"><label for="p_target">목표 집값</label><div class="in"><input id="p_target" type="number" value="120000" step="1000"><span>만</span></div></div>
+    <div class="conv" id="p_targetc"></div>
+    <div class="f"><label for="p_grow">집값 상승률<small>기다리는 동안, 연</small></label><div class="in"><input id="p_grow" type="number" value="2" step="0.5"><span>%</span></div></div>
+    <div class="f"><label for="p_region">지역</label><select id="p_region"><option value="reg">서울·규제지역</option><option value="non">비규제지역</option></select></div>
+    <div class="f"><label for="p_first">구매자</label><select id="p_first"><option value="gen">무주택 일반</option><option value="first">생애최초</option></select></div>
+  </fieldset>
+  <fieldset>
+    <legend>대출 조건</legend>
+    <div class="f"><label for="p_rate">대출 금리</label><div class="in"><input id="p_rate" type="number" value="4.3" step="0.1"><span>%</span></div></div>
+    <div class="f"><label for="p_stress">스트레스 금리<small>DSR 계산 때 더하는 금리</small></label><div class="in"><input id="p_stress" type="number" value="3" step="0.25"><span>%p</span></div></div>
+    <div class="f"><label for="p_term">만기</label><div class="in"><input id="p_term" type="number" value="40" step="1"><span>년</span></div></div>
+  </fieldset>
+</form>
+<main class="planres">
+  <div class="tiles">
+    <div class="tile main"><div class="l">지금 살 수 있는 최대 집값</div><div class="v" id="pl1"></div><div class="s" id="pl1s"></div></div>
+    <div class="tile"><div class="l">목표 집 대출 한도</div><div class="v" id="pl2"></div><div class="s" id="pl2s"></div></div>
+    <div class="tile"><div class="l">목표 집에 필요한 현금</div><div class="v" id="pl3"></div><div class="s" id="pl3s"></div></div>
+    <div class="tile"><div class="l">목표까지 남은 기간</div><div class="v" id="pl4"></div><div class="s" id="pl4s"></div></div>
+  </div>
+  <div class="panel">
+    <h2>모은 돈 vs 필요한 현금</h2>
+    <svg id="plchart" viewBox="0 0 640 230" role="img" aria-label="연도별 모은 돈과 필요한 현금 비교 그래프"></svg>
+    <div class="legend" style="border:0;padding:6px 0 0"><span style="display:flex;gap:6px;align-items:center"><span class="sw" style="background:var(--accent)"></span>모은 돈</span><span style="display:flex;gap:6px;align-items:center"><span class="sw" style="background:var(--cost)"></span>필요한 현금 (집값 상승 반영)</span></div>
+  </div>
+  <div class="panel">
+    <h2>대출 한도는 이렇게 정해져요</h2>
+    <div class="items" id="plwhy" style="border:0;padding:0"></div>
+  </div>
+  <p class="note">필요한 현금에는 취득세·중개보수·등기·채권 할인·이사비가 들어가요. DSR은 은행권 40% 기준이고, 실제 한도는 은행 심사와 상품에 따라 달라요.</p>
+</main>
+</div>
+</section>
+
+<section id="v-notes" data-view hidden>
+<header>
+  <h1>임장 노트</h1>
+  <p>다녀온 단지를 기록해 두세요. 나중에 풀대출로 한 번에 결정할 때 근거가 돼요. 노트는 이 브라우저에만 저장돼요.</p>
+</header>
+<div class="notegrid">
+  <form class="panel nform" id="nf" autocomplete="off">
+    <label class="t">단지<select id="n_apt"></select></label>
+    <label class="t" id="n_customw" hidden>단지 이름<input type="text" id="n_custom" maxlength="40" placeholder="예: 상도 ○○아파트"></label>
+    <label class="t">방문한 날<input type="date" id="n_date"></label>
+    <div class="t" style="font-size:12px;color:var(--muted)">내 점수<div class="stars" id="n_stars"></div></div>
+    <div class="t" style="font-size:12px;color:var(--muted)">확인한 것<div class="checks" id="n_checks"></div></div>
+    <label class="t">메모<textarea id="n_memo" maxlength="2000" placeholder="예: 역에서 실제 도보 12분, 언덕 있음. 부동산 말로는 30평대 매물 2개."></textarea></label>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button class="btn" type="submit">노트 저장</button><span class="msg" id="nmsg"></span></div>
+  </form>
+  <div class="nlist" id="nlist"><div class="empty" style="grid-column:1/-1">첫 임장 노트를 남겨 보세요. 지도에서 단지를 누르고 "임장 노트 쓰기"를 눌러도 돼요.</div></div>
+</div>
+</section>
+
+<section id="v-terms" data-view hidden>
+<header>
+  <h1>용어사전</h1>
+  <p>브리핑과 계산기에 나오는 말을 쉬운 말로 풀었어요. 브리핑 본문의 밑줄 친 단어를 눌러도 뜻이 나와요.</p>
+</header>
+<input class="tsearch" id="tq" type="search" placeholder="코픽스, LTV, 장특공처럼 검색해 보세요" aria-label="용어 검색">
+<div id="tlist"></div>
+</section>
+
+<section id="v-news" data-view hidden>
+<div class="newsbar">
+  <h2 id="ntitle">주간 정책 브리핑</h2>
+  <select id="week" aria-label="주차 선택"></select>
+  <span id="nmeta" style="font-size:12px;color:var(--muted)"></span>
+</div>
+<div id="newsbody"><div class="empty">이번 주 브리핑을 불러오는 중이에요.</div></div>
+<p class="note">브리핑은 data/briefings.json 파일에서 불러와요. 요약은 기사 원문을 바탕으로 했지만 틀릴 수 있으니, 중요한 결정 전에는 원문 링크를 확인하세요.</p>
+</section>
+</div>
+<script src="js/store.js"></script>
+<script src="js/calc.js"></script>
+<script src="js/router.js"></script>
+<script src="js/geo-data.js"></script>
+<script src="js/map.js"></script>
+<script src="js/news.js"></script>
+<script src="js/pages.js"></script>
+<script src="js/compare-rent.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

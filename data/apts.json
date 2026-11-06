@@ -1,0 +1,225 @@
+[
+  {
+    "id": "apgujeong-hyundai",
+    "data": {
+      "built": 1976,
+      "hood": "강남구 압구정동",
+      "lat": 37.5295,
+      "lon": 127.03,
+      "name": "압구정 현대(재건축 추진)",
+      "short": "압구정현대",
+      "station": "압구정(3호선)",
+      "zone": true
+    }
+  },
+  {
+    "id": "banpo-acro",
+    "data": {
+      "built": 2016,
+      "hood": "서초구 반포동",
+      "lat": 37.5135,
+      "lon": 126.9945,
+      "name": "아크로리버파크",
+      "short": "아리팍",
+      "station": "신반포(9호선)",
+      "units": 1612,
+      "zone": true
+    }
+  },
+  {
+    "id": "banpo-onebailey",
+    "data": {
+      "built": 2023,
+      "hood": "서초구 반포동",
+      "lat": 37.5085,
+      "lon": 126.9985,
+      "name": "래미안원베일리",
+      "short": "원베일리",
+      "station": "신반포(9호선)·고속터미널",
+      "units": 2990,
+      "zone": true
+    }
+  },
+  {
+    "id": "gyeonghuigung-xi",
+    "data": {
+      "built": 2017,
+      "hood": "종로구 홍파동",
+      "lat": 37.568,
+      "lon": 126.964,
+      "name": "경희궁자이",
+      "short": "경희궁자이",
+      "station": "서대문(5호선)",
+      "units": 2533,
+      "zone": true
+    }
+  },
+  {
+    "id": "helio",
+    "data": {
+      "built": 2018,
+      "hood": "송파구 가락동",
+      "lat": 37.4975,
+      "lon": 127.106,
+      "name": "헬리오시티",
+      "short": "헬리오시티",
+      "station": "송파(8호선)",
+      "units": 9510,
+      "zone": false
+    }
+  },
+  {
+    "id": "heukseok-acro",
+    "data": {
+      "built": 2019,
+      "hood": "동작구 흑석동",
+      "lat": 37.5075,
+      "lon": 126.96,
+      "name": "아크로리버하임",
+      "short": "흑석아크로",
+      "station": "흑석(9호선)",
+      "units": 1073,
+      "zone": true
+    }
+  },
+  {
+    "id": "ichon-chelitus",
+    "data": {
+      "built": 2015,
+      "hood": "용산구 이촌동",
+      "lat": 37.5195,
+      "lon": 126.974,
+      "name": "래미안첼리투스",
+      "short": "첼리투스",
+      "station": "이촌(4호선)",
+      "units": 460,
+      "zone": true
+    }
+  },
+  {
+    "id": "jamsil-els",
+    "data": {
+      "built": 2008,
+      "hood": "송파구 잠실동",
+      "lat": 37.513,
+      "lon": 127.0825,
+      "name": "잠실엘스",
+      "short": "잠실엘스",
+      "station": "잠실새내(2호선)",
+      "units": 5678,
+      "zone": false
+    }
+  },
+  {
+    "id": "jamsil-ricenz",
+    "data": {
+      "built": 2008,
+      "hood": "송파구 잠실동",
+      "lat": 37.516,
+      "lon": 127.0905,
+      "name": "리센츠",
+      "short": "리센츠",
+      "station": "잠실새내(2호선)",
+      "units": 5563,
+      "zone": false
+    }
+  },
+  {
+    "id": "mapo-raemian",
+    "data": {
+      "built": 2014,
+      "hood": "마포구 아현동",
+      "lat": 37.553,
+      "lon": 126.9555,
+      "name": "마포래미안푸르지오",
+      "short": "마래푸",
+      "station": "애오개·아현(5·2호선)",
+      "units": 3885,
+      "zone": true
+    }
+  },
+  {
+    "id": "oksu-parkhills",
+    "data": {
+      "built": 2016,
+      "hood": "성동구 옥수동",
+      "lat": 37.5455,
+      "lon": 127.013,
+      "name": "e편한세상 옥수파크힐스",
+      "short": "옥수파크힐스",
+      "station": "옥수·금호(3호선)",
+      "units": 1976,
+      "zone": true
+    }
+  },
+  {
+    "id": "oksu-rivergen",
+    "data": {
+      "built": 2012,
+      "hood": "성동구 옥수동",
+      "lat": 37.5395,
+      "lon": 127.0175,
+      "name": "래미안옥수리버젠",
+      "short": "옥수리버젠",
+      "station": "옥수(3호선)",
+      "units": 1511,
+      "zone": true
+    }
+  },
+  {
+    "id": "sangdo-nobility",
+    "data": {
+      "built": 2018,
+      "hood": "동작구 상도동",
+      "lat": 37.4975,
+      "lon": 126.946,
+      "name": "e편한세상 상도노빌리티",
+      "short": "상도노빌리티",
+      "station": "상도(7호선)",
+      "units": 1122,
+      "zone": true
+    }
+  },
+  {
+    "id": "seongsu-trimage",
+    "data": {
+      "built": 2017,
+      "hood": "성동구 성수동",
+      "lat": 37.5415,
+      "lon": 127.042,
+      "name": "트리마제",
+      "short": "트리마제",
+      "station": "뚝섬(2호선)",
+      "units": 688,
+      "zone": true
+    }
+  },
+  {
+    "id": "wangsimni-tenzhill",
+    "data": {
+      "built": 2015,
+      "hood": "성동구 하왕십리동",
+      "lat": 37.565,
+      "lon": 127.027,
+      "name": "센트라스·텐즈힐(왕십리뉴타운)",
+      "short": "왕십리뉴타운",
+      "station": "왕십리(2·5호선)",
+      "units": 1702,
+      "zone": false
+    }
+  },
+  {
+    "id": "yongsan-central",
+    "data": {
+      "built": 2020,
+      "hood": "용산구 한강로",
+      "lat": 37.53,
+      "lon": 126.9705,
+      "name": "용산센트럴파크해링턴스퀘어",
+      "short": "용산센트럴",
+      "station": "신용산(4호선)",
+      "units": 1140,
+      "zone": true
+    }
+  }
+]
