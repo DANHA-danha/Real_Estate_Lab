@@ -81,8 +81,8 @@ function pickDist(n){
   const inside=APTS.map((a,i)=>[a,i]).filter(([a])=>(a.hood||'').startsWith(n));
   const card=document.getElementById('aptcard');
   card.innerHTML=`<h3>${esc(n)}</h3><div style="font-size:12px;color:var(--muted)">${DIST?esc(DIST.label||''):''}</div>
-    <div style="font:600 26px var(--mono);margin:6px 0" class="${v==null?'':v>=0?'neg':'pos2'}">${fmtChg(v)}</div>
-    <div style="font-size:12.5px;color:var(--muted)">${v==null?'이번 주 이 구의 변동률은 아직 수집되지 않았어요.':'지난주 대비 아파트 매매가격 변동률이에요.'}</div>
+    <div style="font:500 24px var(--mono);margin:6px 0" class="${v==null?'':v>=0?'neg':'pos2'}">${fmtChg(v)}</div>
+    <div style="font-size:13px;color:var(--muted)">${v==null?'이번 주 이 구의 변동률은 아직 수집되지 않았어요.':'지난주 대비 아파트 매매가격 변동률이에요.'}</div>
     <div style="margin-top:10px;font-size:13px;font-weight:500">이 구의 단지</div>
     <div class="mini">${inside.length?inside.map(([a,i])=>`<button type="button" data-pi="${i}"><span>${esc(a.name)}</span><span>${a.price?priceLabel(a):(a.built||'')}</span></button>`).join(''):'<p class="msg">등록된 단지가 없어요.</p>'}</div>`;
   card.querySelectorAll('[data-pi]').forEach(b=>b.addEventListener('click',()=>pick(+b.dataset.pi)));

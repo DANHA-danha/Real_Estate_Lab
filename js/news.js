@@ -16,7 +16,6 @@ function renderNews(){
   let h=b.headline?`<div class="lead"><b>이번 주 한 줄</b> ${esc(b.headline)}</div>`:'';
   h+='<div class="news">'+(b.items||[]).map((it,i)=>`
     <article class="ncard">
-      <div class="thumb" aria-hidden="true">${THUMBS[it.category]||""}</div>
       <div class="meta"><span class="cat ${CATC[it.category]||''}">${esc(it.category)}</span><span>${esc(it.source)}</span><span>${esc(it.date)}</span></div>
       <h4>${esc(it.title)}</h4>
       <div class="ai"><small>AI 요약</small>${linkTerms(esc(it.summary))}</div>

@@ -187,7 +187,7 @@ function renderHome(){
   if(!IND){ return; }
   $('homeasof').textContent=`지표 ${IND.updatedAt||''} 기준 · 매주 월요일 갱신`;
   $('nums').innerHTML=(IND.items||[]).map(n=>{const c=n.change||'';const cls=/^[+▲]/.test(c)?(n.upIsBad?'neg':'pos'):/^[−\-▼]/.test(c)?(n.upIsBad?'pos':'neg'):'';
-    return `<div class="num"><div class="l">${esc(n.label)}${n.tag?`<em>${esc(n.tag)}</em>`:''}</div><div class="v">${esc(n.value)}</div><div class="d ${cls}">${esc(c)}</div>${n.why?`<div class="s" style="color:var(--accent)">${esc(n.why)}</div>`:''}<div class="s">${esc(n.asOf||'')} · ${esc(n.source||'')}</div></div>`;}).join('');
+    return `<div class="num"><div class="l">${esc(n.label)}${n.tag?`<em>${esc(n.tag)}</em>`:''}</div><div class="v">${esc(n.value)}</div><div class="d ${cls}">${esc(c)}</div>${n.why?`<div class="s">${esc(n.why)}</div>`:''}<div class="s">${esc(n.asOf||'')} · ${esc(n.source||'')}</div></div>`;}).join('');
   const sg=IND.signals||[];
   $('signals').innerHTML=sg.map(s=>`<div class="sig"><span class="dot ${esc(s.state)}" aria-label="${s.state==='green'?'초록':s.state==='yellow'?'노랑':'빨강'}"></span><b>${esc(s.label)}</b><p>${esc(s.reason)}</p></div>`).join('')+(IND.verdict?`<div class="verdict">${esc(IND.verdict)}</div>`:'');
 }

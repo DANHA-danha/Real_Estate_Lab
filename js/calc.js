@@ -259,7 +259,7 @@ function calc(){
     </div>`+
     item('아낀 월세 (실거주 가치)',rent*m, rent>0?`월 ${won(rent)} × ${m}개월 · 직접 살면 이만큼 주거비를 안 써요`:'0으로 설정됨', 'pos')+
     `<div class="it"><div class="n">실거주까지 합친 순이익</div><div class="m ${profitLive>=0?'pos':'neg'}">${won(profitLive,true)}</div><div class="w">${profitLive>bondP?'채권보다 유리':'채권보다 불리'}<span class="badge ${profitLive>bondP?'':'c'}">${won(profitLive-bondP,true)}</span> · 집에 넣은 돈이 들어간 시점 그대로 예금·채권에 넣었다고 비교했어요</div></div>`;
-  window.LAST={buy,sell,Y,profit,R,costTotal,equity0};
+  window.LAST={buy,sell,Y,profit,R,costTotal,equity0,buyTotal,holdTotal,sellTotal};
 }
 $('f').addEventListener('input',calc);
 $('f').addEventListener('change',calc);

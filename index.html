@@ -5,65 +5,90 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>부동산랩</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="css/style.css">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}[hidden]{display:none!important}img{max-width:100%}</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
 </head>
 <body>
-<div class="top"><div class="topin">
-  <div class="brand"><i aria-hidden="true"></i>부동산랩</div>
+<div class="app">
+<aside class="sb" id="sb">
+  <a class="brand" href="#home"><span class="mark" aria-hidden="true"></span>부동산랩</a>
   <nav aria-label="메뉴">
-    <a href="#home" data-v="home">홈</a>
-    <a href="#calc" data-v="calc">손익계산기</a>
-    <a href="#plan" data-v="plan">자금계획</a>
-    <a href="#rent" data-v="rent">전세·월세·매수</a>
-    <a href="#map" data-v="map">시세 지도</a>
-    <a href="#notes" data-v="notes">임장 노트</a>
-    <a href="#news" data-v="news">정책 브리핑</a>
-    <a href="#terms" data-v="terms">용어사전</a>
+    <a href="#home" data-v="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>홈</a>
+    <p class="nl">계산</p>
+    <a href="#calc" data-v="calc"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8M16 14v4M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/></svg>손익계산기</a>
+    <a href="#plan" data-v="plan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>자금계획</a>
+    <a href="#rent" data-v="rent"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3 4 7l4 4M4 7h16M16 21l4-4-4-4M20 17H4"/></svg>전세·월세·매수</a>
+    <p class="nl">탐색</p>
+    <a href="#map" data-v="map"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15M9 3.236v15"/></svg>시세 지도</a>
+    <a href="#notes" data-v="notes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4M2 10h4M2 14h4M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg>임장 노트</a>
+    <p class="nl">공부</p>
+    <a href="#news" data-v="news"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18h-5M18 14h-8"/><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="10" y="6" rx="1"/></svg>정책 브리핑</a>
+    <a href="#terms" data-v="terms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>용어사전</a>
   </nav>
-</div></div>
+</aside>
+<div class="scrim" id="scrim" hidden></div>
+<div class="main">
+<div class="mbar">
+  <a class="brand" href="#home"><span class="mark" aria-hidden="true"></span>부동산랩</a>
+  <button class="menub" id="menub" type="button" aria-controls="sb" aria-expanded="false" aria-label="메뉴 열기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+</div>
 
 <div class="wrap">
 
 <section id="v-home" data-view hidden>
 
 <div class="hero">
-  <svg class="sky" id="skyline" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
-  <div>
-    <h1>서울 내 집 마련 계산 노트</h1>
-    <p class="big">부동산<b>랩</b></p>
-    <p class="sub">집값이 아니라 세금·이자·수수료까지 다 뺀 숫자로 판단해요. 계산하고, 지도에서 고르고, 매주 정책을 확인하세요.</p>
-    <a class="cta" href="#calc">손익 계산 시작하기 <span aria-hidden="true">→</span></a>
+  <div class="hero-text">
+    <p class="eyebrow">서울 내 집 마련 계산 노트</p>
+    <h1>집이 오른 만큼<br>다 내 돈은 아니에요</h1>
+    <p class="sub">취득세, 대출이자, 보유세, 양도세를 빼고 실제로 손에 남는 돈을 계산해요. 지도에서 단지를 고르고, 매주 바뀌는 정책을 확인하세요.</p>
+    <div class="actions">
+      <a class="btn lg" href="#calc">손익 계산 시작하기</a>
+      <a class="btn lg ghost" href="#news">이번 주 브리핑</a>
+    </div>
+    <p class="herostat" id="herocard"><span>서울 아파트 주간 변동률</span><b id="herov">—</b><span id="heros"></span></p>
+    <div id="herodots" hidden></div>
   </div>
-  <div class="hcard" id="herocard">
-    <div class="l">서울 아파트 주간 변동률</div>
-    <div class="v" id="herov">—</div>
-    <div class="l" id="heros"></div>
-    <div class="dots" id="herodots"></div>
-  </div>
+  <form class="qc panel" id="qc" autocomplete="off" aria-label="빠른 손익 계산">
+    <div class="qc-in">
+      <label><span>사는 값 <em id="qc-buyc"></em></span><span class="in"><input id="qc-buy" type="number" step="1000" inputmode="numeric"><span>만</span></span></label>
+      <label><span>파는 값 <em id="qc-sellc"></em></span><span class="in"><input id="qc-sell" type="number" step="1000" inputmode="numeric"><span>만</span></span></label>
+      <label>보유<span class="in"><input id="qc-y" type="number" min="1" max="30" step="1" inputmode="numeric"><span>년</span></span></label>
+    </div>
+    <p class="qc-gain">오른 돈 <b id="qc-gain">—</b></p>
+    <div class="qc-bar" id="qc-bar" aria-hidden="true"></div>
+    <div class="qc-rows">
+      <div class="ql"><i class="sw c1"></i><span>살 때<small>취득세·중개보수·입주</small></span><b id="qc-b">—</b></div>
+      <div class="ql"><i class="sw c2"></i><span>보유 중<small>대출이자·보유세·수선</small></span><b id="qc-h">—</b></div>
+      <div class="ql"><i class="sw c3"></i><span>팔 때<small>중개보수·양도세</small></span><b id="qc-s">—</b></div>
+    </div>
+    <div class="qc-net"><span>손에 남는 돈</span><b id="qc-net">—</b></div>
+    <p class="qc-f"><span id="qc-note">대출 4억, 금리 4.3% 기준이에요</span><a href="#calc">대출·세금 바꿔 보기</a></p>
+  </form>
 </div>
-<p class="msg" id="homeasof" style="margin:0 0 8px"></p>
+<div class="sech"><h2>이번 주 지표</h2><p class="msg" id="homeasof"></p></div>
 <div class="nums" id="nums"><div class="num"><div class="l">지표를 불러오는 중이에요</div><div class="v">—</div></div></div>
 <div class="homegrid">
   <div class="panel">
     <h2>매수 타이밍 신호등</h2>
     <div id="signals"><p class="msg">신호를 불러오는 중이에요.</p></div>
   </div>
-  <div style="display:grid;gap:14px;min-width:0">
+  <div class="stack">
     <div class="panel">
       <h2>이번 주 시세 지도</h2>
       <div class="minimapw">
         <a href="#map" aria-label="시세 지도 크게 보기"><svg id="minimap" viewBox="60 120 760 520" role="img" aria-label="서울 구별 아파트 매매가격 변동률 지도"></svg></a>
         <div id="movers"><p class="msg">불러오는 중이에요.</p></div>
       </div>
-      <p class="msg" id="minilabel" style="margin:8px 0 0"></p>
+      <p class="msg cap" id="minilabel"></p>
     </div>
 
     <div class="panel">
       <h2>이번 주 한 줄</h2>
-      <p id="homehead" style="margin:0;font-size:13.5px;line-height:1.65">브리핑을 불러오는 중이에요.</p>
-      <a href="#news" style="font-size:12.5px;color:var(--accent);text-decoration:none;display:inline-block;margin-top:6px">브리핑 전체 보기 →</a>
+      <p id="homehead" class="oneline">브리핑을 불러오는 중이에요.</p>
+      <a class="more" href="#news">브리핑 전체 보기</a>
     </div>
     <div class="panel">
       <h2>최근 시나리오</h2>
@@ -132,7 +157,7 @@
   </fieldset>
 </form>
 
-<main style="min-width:0">
+<main class="res">
   <div class="tiles">
     <div class="tile main"><div class="l">최종 순이익 (세후)</div><div class="v" id="t1"></div><div class="s" id="t1s"></div></div>
     <div class="tile"><div class="l">연 수익률 (IRR)</div><div class="v" id="t2"></div><div class="s" id="t2s"></div></div>
@@ -154,15 +179,15 @@
 </main>
 </div>
 
-<div class="panel" style="margin-top:20px">
+<div class="panel after">
   <h2>저장한 시나리오</h2>
-  <p class="msg" style="margin:0 0 8px">지금 입력한 조건을 이름 붙여 저장하고, 여러 개를 나란히 비교해요.</p>
+  <p class="msg lede">지금 입력한 조건을 이름 붙여 저장하고, 여러 개를 나란히 비교해요.</p>
   <div class="saverow">
     <input type="text" id="scname" placeholder="예: 옥수 30평 6년 보유" maxlength="40">
     <button class="btn" id="scsave" type="button">지금 조건 저장</button>
     <span class="msg" id="scmsg"></span>
   </div>
-  <div class="tbl" id="sctbl"><p class="msg" style="margin:10px 0 0">아직 저장한 시나리오가 없어요.</p></div>
+  <div class="tbl" id="sctbl"><p class="msg cap">아직 저장한 시나리오가 없어요.</p></div>
 </div>
 </section>
 
@@ -191,7 +216,7 @@
     <div class="f"><label for="r_dep">내 돈 예금 수익률<small>세후</small></label><div class="in"><input id="r_dep" type="number" value="2.4" step="0.1"><span>%</span></div></div>
   </fieldset>
 </form>
-<main style="min-width:0">
+<main class="res">
   <div class="tiles" id="rtiles"></div>
   <div class="panel"><h2>기간 전체 주거비</h2><div class="wf" id="rbars"></div></div>
   <div id="rdetail"></div>
@@ -212,17 +237,17 @@
   <aside class="side">
     <div class="card" id="aptcard">
       <h3>구나 단지를 골라 보세요</h3>
-      <p style="margin:0;font-size:13px;color:var(--muted)">지도에서 구를 누르면 변동률과 그 구의 단지가, 점을 누르면 단지 정보가 나와요. 초록 점은 세 업무지구 사이 벨트 안 단지예요.</p>
+      <p class="msg">지도에서 구를 누르면 변동률과 그 구의 단지가, 점을 누르면 단지 정보가 나와요. 초록 점은 세 업무지구 사이 벨트 안 단지예요.</p>
     </div>
     <div class="card">
       <h3>단지 목록</h3>
-      <div class="alist" id="alist"><p style="font-size:13px;color:var(--muted);margin:6px 0">단지 정보를 불러오는 중이에요.</p></div>
+      <div class="alist" id="alist"><p class="msg">단지 정보를 불러오는 중이에요.</p></div>
     </div>
   </aside>
 </div>
-<div class="panel" style="margin-top:16px">
+<div class="panel after">
   <h2>단지 비교</h2>
-  <p class="msg" id="cmpmsg" style="margin:0 0 8px"></p>
+  <p class="msg lede" id="cmpmsg"></p>
   <div id="cmpbody"></div>
 </div>
 <p class="note">구 경계는 통계청 행정구역 자료, 변동률은 한국부동산원 주간 아파트 가격 동향이에요. 매주 월요일 브리핑과 함께 갱신되고, 아직 수집되지 않은 구는 회색으로 보여요. 지하철은 주요 역만 이었고, 원은 각 업무지구에서 반경 약 3km예요. 단지 실거래가는 국토교통부 API가 연결되면 채워져요.</p>
@@ -269,11 +294,11 @@
   <div class="panel">
     <h2>모은 돈 vs 필요한 현금</h2>
     <svg id="plchart" viewBox="0 0 640 230" role="img" aria-label="연도별 모은 돈과 필요한 현금 비교 그래프"></svg>
-    <div class="legend" style="border:0;padding:6px 0 0"><span style="display:flex;gap:6px;align-items:center"><span class="sw" style="background:var(--accent)"></span>모은 돈</span><span style="display:flex;gap:6px;align-items:center"><span class="sw" style="background:var(--cost)"></span>필요한 현금 (집값 상승 반영)</span></div>
+    <div class="legend inline"><span class="key"><span class="sw" style="background:var(--accent)"></span>모은 돈</span><span class="key"><span class="sw" style="background:var(--cost)"></span>필요한 현금 (집값 상승 반영)</span></div>
   </div>
   <div class="panel">
     <h2>대출 한도는 이렇게 정해져요</h2>
-    <div class="items" id="plwhy" style="border:0;padding:0"></div>
+    <div class="items bare" id="plwhy"></div>
   </div>
   <p class="note">필요한 현금에는 취득세·중개보수·등기·채권 할인·이사비가 들어가요. DSR은 은행권 40% 기준이고, 실제 한도는 은행 심사와 상품에 따라 달라요.</p>
 </main>
@@ -290,10 +315,10 @@
     <label class="t">단지<select id="n_apt"></select></label>
     <label class="t" id="n_customw" hidden>단지 이름<input type="text" id="n_custom" maxlength="40" placeholder="예: 상도 ○○아파트"></label>
     <label class="t">방문한 날<input type="date" id="n_date"></label>
-    <div class="t" style="font-size:12px;color:var(--muted)">내 점수<div class="stars" id="n_stars"></div></div>
-    <div class="t" style="font-size:12px;color:var(--muted)">확인한 것<div class="checks" id="n_checks"></div></div>
+    <div class="t">내 점수<div class="stars" id="n_stars"></div></div>
+    <div class="t">확인한 것<div class="checks" id="n_checks"></div></div>
     <label class="t">메모<textarea id="n_memo" maxlength="2000" placeholder="예: 역에서 실제 도보 12분, 언덕 있음. 부동산 말로는 30평대 매물 2개."></textarea></label>
-    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button class="btn" type="submit">노트 저장</button><span class="msg" id="nmsg"></span></div>
+    <div class="row"><button class="btn" type="submit">노트 저장</button><span class="msg" id="nmsg"></span></div>
   </form>
   <div class="nlist" id="nlist"><div class="empty" style="grid-column:1/-1">첫 임장 노트를 남겨 보세요. 지도에서 단지를 누르고 "임장 노트 쓰기"를 눌러도 돼요.</div></div>
 </div>
@@ -312,11 +337,13 @@
 <div class="newsbar">
   <h2 id="ntitle">주간 정책 브리핑</h2>
   <select id="week" aria-label="주차 선택"></select>
-  <span id="nmeta" style="font-size:12px;color:var(--muted)"></span>
+  <span id="nmeta" class="msg"></span>
 </div>
 <div id="newsbody"><div class="empty">이번 주 브리핑을 불러오는 중이에요.</div></div>
 <p class="note">브리핑은 data/briefings.json 파일에서 불러와요. 요약은 기사 원문을 바탕으로 했지만 틀릴 수 있으니, 중요한 결정 전에는 원문 링크를 확인하세요.</p>
 </section>
+</div>
+</div>
 </div>
 <script src="js/store.js"></script>
 <script src="js/calc.js"></script>
@@ -327,5 +354,36 @@
 <script src="js/pages.js"></script>
 <script src="js/compare-rent.js"></script>
 <script src="js/home.js"></script>
+<script>
+/* 홈 빠른 계산: 손익계산기와 같은 숫자를 써요 */
+(function(){
+  const map={'qc-buy':'buy','qc-sell':'sell','qc-y':'years'};
+  function fill(){
+    const L=window.LAST; if(!L) return;
+    for(const k in map){ if(document.activeElement!==$(k)) $(k).value=$(map[k]).value; }
+    $('qc-buyc').textContent=won(L.buy); $('qc-sellc').textContent=won(L.sell);
+    const gain=L.sell-L.buy, costs=[L.buyTotal,L.holdTotal,L.sellTotal];
+    $('qc-gain').textContent=won(gain,true);
+    $('qc-b').textContent='−'+won(costs[0]); $('qc-h').textContent='−'+won(costs[1]); $('qc-s').textContent='−'+won(costs[2]);
+    $('qc-net').textContent=won(L.profit,true); $('qc-net').className=L.profit>=0?'pos':'neg';
+    const tot=Math.max(gain,costs[0]+costs[1]+costs[2],1);
+    $('qc-bar').innerHTML=costs.map((c,i)=>`<i class="c${i+1}" style="width:${c/tot*100}%"></i>`).join('')+(L.profit>0?`<i class="g" style="width:${L.profit/tot*100}%"></i>`:'');
+    const loan=num('loan'), rate=num('rate');
+    $('qc-note').textContent=loan>0?`대출 ${won(loan)}, 금리 ${rate}% 기준이에요`:'대출 없이 계산했어요';
+  }
+  $('qc').addEventListener('input',e=>{ const t=map[e.target.id]; if(!t) return; $(t).value=e.target.value; calc(); fill(); });
+  $('qc').addEventListener('submit',e=>e.preventDefault());
+  fill(); window.addEventListener('hashchange',fill);
+})();
+/* 좁은 화면 메뉴 */
+(function(){
+  const b=$('menub'), sc=$('scrim');
+  const set=o=>{document.body.classList.toggle('navopen',o); b.setAttribute('aria-expanded',o); b.setAttribute('aria-label',o?'메뉴 닫기':'메뉴 열기'); sc.hidden=!o;};
+  b.addEventListener('click',()=>set(!document.body.classList.contains('navopen')));
+  sc.addEventListener('click',()=>set(false));
+  window.addEventListener('hashchange',()=>set(false));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape') set(false);});
+})();
+</script>
 </body>
 </html>
