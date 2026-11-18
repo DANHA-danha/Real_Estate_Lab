@@ -44,7 +44,7 @@ data/
   briefings.json    주차별 정책 브리핑
 ```
 
----
+
 ## UI 스크린샷
 <img src="img/01-홈.png" width="100%" />
 <img src="img/02-손익계산기.png" width="100%" />
